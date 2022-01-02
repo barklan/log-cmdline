@@ -24,7 +24,7 @@ RUN adduser \
     --no-create-home \
     --uid "${UID}" \
     "${USER}"
-WORKDIR $GOPATH/src/mypackage/myapp/
+WORKDIR $GOPATH/src/mypackage/log-cmdline/
 
 # use modules
 COPY go.mod .
@@ -38,7 +38,7 @@ COPY . .
 # Build the binary
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build \
     -ldflags='-w -s -extldflags "-static"' -a \
-    -o /go/bin/app ./cmd/myapp/.
+    -o /go/bin/app ./cmd/log-cmdline/.
 
 ############################
 # STEP 2 build a small image

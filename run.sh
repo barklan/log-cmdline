@@ -30,9 +30,9 @@ function up {
     reflex -c reflex.conf --decoration=fancy
 }
 
-function up:myapp {
+function up:log-cmdline {
     _use_env
-    go run cmd/myapp/main.go
+    go run cmd/log-cmdline/main.go
 }
 
 function up:fullstack {
@@ -42,6 +42,10 @@ function up:fullstack {
 
 function env:replace:prod {
     ENV_FOR=prod bash ./scripts/replace_env.sh
+}
+
+function docker:push {
+    bash scripts/dockerpush.sh
 }
 
 # -----------------------------------------------------------------------------

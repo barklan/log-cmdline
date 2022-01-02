@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+		{
+            "label": "run.sh up",
+            "type": "shell",
+            "command": "bash -i run.sh up",
+            "isBackground": true,
+        },
+		{
+            "label": "run.sh up:log-cmdline",
+            "type": "shell",
+            "command": "bash -i run.sh up:log-cmdline",
+            "isBackground": true,
+        },
+		{
+            "label": "run.sh up:fullstack",
+            "type": "shell",
+            "command": "bash -i run.sh up:fullstack",
+            "isBackground": true,
+        },
+		{
+            "label": "run.sh env:replace:prod",
+            "type": "shell",
+            "command": "bash -i run.sh env:replace:prod",
+            "isBackground": true,
+        },
+		{
+            "label": "run.sh docker:push",
+            "type": "shell",
+            "command": "bash -i run.sh docker:push",
+            "isBackground": true,
+        },
+    ],
+}

@@ -1,11 +1,11 @@
 version: "3.8"
 
 services:
-  myapp:
-    image: '${DOCKER_IMAGE_PREFIX?Variable not set}myapp:rolling'
+  log-cmdline:
+    image: '${DOCKER_IMAGE_PREFIX?Variable not set}barklan/log-cmdline:rolling'
     build:
       context: .
-      dockerfile: dockerfiles/myapp.dockerfile
+      dockerfile: dockerfiles/log-cmdline.dockerfile
       args:
         DOCKER_IMAGE_PREFIX: ${DOCKER_IMAGE_PREFIX?Variable not set}
     networks:
